@@ -1,0 +1,14 @@
+defaults
+  log global
+  mode http
+  option httplog
+  option dontlognull
+  option http-server-close
+  maxconn 2000
+  timeout connect 10000
+  timeout client 50000
+  timeout server 50000
+
+listen http-in
+    bind *:80{{range $i, $e := service "sinatra"}}
+        server {{$e.Node}}-{{$i}} {{$e.Address}}:{{$e.Port}}{{end}}

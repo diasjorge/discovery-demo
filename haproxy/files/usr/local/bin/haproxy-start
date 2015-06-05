@@ -1,0 +1,1 @@
+haproxy -D -f /etc/haproxy/haproxy.cfg -p /etc/haproxy/haproxy.pid -sf $(cat /etc/haproxy/haproxy.pid)
