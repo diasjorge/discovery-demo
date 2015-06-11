@@ -1,7 +1,6 @@
 #!/bin/sh
 
-cd cluster; vagrant up
-cd ..
+vagrant up
 
 function go_next {
     echo ''
