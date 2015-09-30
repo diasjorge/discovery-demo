@@ -7,6 +7,8 @@ function go_next {
     read -e -p "$1. Continue? "
 }
 
+open http://172.20.20.10:8500/ui
+
 export DOCKER_HOST="tcp://172.20.20.10:12375"
 unset DOCKER_TLS_VERIFY
 

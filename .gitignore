@@ -1,3 +1,5 @@
 .vagrant/*
 */.vagrant/*
 /base/package.box
+/base/packer/packer_cache
+/base/packer/packer_virtualbox-iso_virtualbox.box

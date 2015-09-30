@@ -60,7 +60,7 @@ SCRIPT
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "../base/package.box"
+  config.vm.box = "dias_jorge/discovery-demo"
 
   config.vm.provision "shell", inline: docker_setup_script
 

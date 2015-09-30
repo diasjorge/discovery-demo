@@ -4,13 +4,7 @@ To run the demo.
 
 Install virtual box.
 
-Then we need to prepare our base image.
-
-```
-cd base; vagrant up; vagrant package
-```
-
-Once it finishes, from the root of the project.
+Then execute:
 
 ```
 ./demo.sh
