@@ -37,7 +37,7 @@ export PRIVATE_IP=`/sbin/ifconfig eth1 | grep "inet addr" | awk -F: '{print $2}'
 docker run -d --name registrator \
     --restart always \
     -v /var/run/docker.sock:/tmp/docker.sock \
-    -h $HOSTNAME progrium/registrator consul://$PRIVATE_IP:8500
+    -h $HOSTNAME gliderlabs/registrator consul://$PRIVATE_IP:8500
 SCRIPT
 
 swarm_node_script = <<SCRIPT
