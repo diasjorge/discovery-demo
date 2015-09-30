@@ -3,14 +3,10 @@
 
 base_script = <<SCRIPT
 echo Installing dependencies...
-[ -e /usr/lib/apt/methods/https ] || {
-  apt-get update
-  apt-get install -y apt-transport-https
-}
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
-echo deb https://get.docker.com/ubuntu docker main > /etc/apt/sources.list.d/docker.list
-apt-get update
-apt-get install -y lxc-docker
+
+curl -sSL https://get.docker.com/ | sh
+
+usermod -aG docker vagrant
 
 docker pull progrium/consul
 docker pull progrium/registrator
@@ -29,8 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  # config.vm.box = "ubuntu/trusty64"
-  config.vm.box = "package.box"
+  config.vm.box = "ubuntu/trusty64"
 
   config.vm.provision "shell", inline: base_script
 
