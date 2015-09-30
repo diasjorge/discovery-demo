@@ -12,7 +12,7 @@ curl -sSL https://get.docker.com/ | sh
 usermod -aG docker vagrant
 
 docker pull progrium/consul
-docker pull progrium/registrator
+docker pull gliderlabs/registrator
 docker pull swarm
 docker pull diasjorge/haproxy-demo
 docker pull diasjorge/sinatra-demo
