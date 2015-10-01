@@ -18,7 +18,7 @@ docker run -d -P redis
 go_next 'Starting haproxy container'
 docker run -d -p 80:80 --dns 172.17.42.1 -e SERVICE_NAME=haproxy --name haproxy diasjorge/haproxy-demo
 
-echo "haproxy running on $(docker inspect -f '{{ .Node.Ip }}' haproxy)"
+echo "haproxy running on $(docker inspect -f '{{ .Node.IP }}' haproxy)"
 
 go_next 'Starting sinatra app container'
 docker run -d -P --dns 172.17.42.1 -e SERVICE_NAME=sinatra diasjorge/sinatra-demo
